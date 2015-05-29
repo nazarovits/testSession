@@ -91,6 +91,11 @@ db.once('open', function () {
         res.status(200).send({success: 'success signIn'});
     });
 
+    app.get('/signOut', function (req, res, next) {
+        req.session.destroy();
+        res.status(200).send({success: 'success signOut'});
+    });
+
     app.listen(port, function () {
         console.log('==============================================================');
         console.log('|| server start success on port=' + port + ' in ' + process.env.NODE_ENV + ' version ||');
