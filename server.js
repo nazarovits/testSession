@@ -82,8 +82,8 @@ db.once('open', function () {
         }
     });
 
-    app.get('/signIn/:userId', function (req, res, next) {
-        var userId = req.params.userId;
+    app.get('/signIn', function (req, res, next) {
+        var userId = 1;
 
         req.session.userId = userId;
         req.session.loggedIn = true;
